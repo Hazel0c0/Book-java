@@ -1,4 +1,4 @@
-package object01;
+package object01.객체_설계;
 
 public class Theater {
   // 소극장

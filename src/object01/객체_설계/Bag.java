@@ -1,4 +1,4 @@
-package object01.object01_solution;
+package object01.객체_설계;
 
 public class Bag {
     private Long amount; // 현금
@@ -7,11 +7,10 @@ public class Bag {
 
     // 1. 초대장 유무 판단
     // 인스턴스 생성 시점에서 제약 강제
-    public Bag(long amount) {
+    public Bag(long amount){
         this(null, amount);
     }
-
-    public Bag(Invitation invitation, long amount) {
+    public Bag(Invitation invitation, long amount){
         this.invitation = invitation;
         this.amount = amount;
     }
@@ -22,21 +21,20 @@ public class Bag {
         return invitation != null;
     }
 
-    public boolean hasTicket() {
+    public boolean hasTicket(){
         return ticket != null;
     }
 
-    public void setTicket(Ticket ticket) {
+    public void setTicket(Ticket ticket){
         // 초대장 -> 티켓 교환
         this.ticket = ticket;
     }
 
     // 현금 증가 감소
-    public void minusAmount(Long amount) {
+    public void minusAmount(Long amount){
         this.amount -= amount;
     }
-
-    public void plusAmount(Long amount) {
+    public void plusAmount(Long amount){
         this.amount += amount;
     }
 }
