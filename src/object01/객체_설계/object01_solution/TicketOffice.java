@@ -1,4 +1,4 @@
-package object01.object01_solution;
+package object01.객체_설계.object01_solution;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,16 +15,22 @@ public class TicketOffice {
         this.tickets.addAll(Arrays.asList(tickets));
     }
     // 티켓 판매
-    public Ticket getTicket() {
+    private Ticket getTicket() {
         return tickets.remove(0);
     }
-
 
     // 판매
     public void minusAmount(Long amount){
         this.amount -= amount;
     }
-    public void plusAmount(Long amount){
+    private void plusAmount(Long amount){
         this.amount += amount;
     }
+
+    public void sellTicketTo(Audience audience){
+    // sellTo 메서드 이동
+    // getTicket 메스드와 plusAmount 는 내부에서만 사용됨
+        plusAmount(audience.buy(getTicket()));
+    }
+
 }

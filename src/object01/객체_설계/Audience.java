@@ -1,4 +1,4 @@
-package object01;
+package object01.객체_설계;
 
 public class Audience {
     // 관람객 : 소지품을 보관할 가방을 소유
